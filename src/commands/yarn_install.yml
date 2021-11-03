@@ -8,7 +8,7 @@ parameters:
   cache_folder:
     description: The path to the yarn cache folder.  Defaults to /tmp/yarn
     type: string
-    default: "/tmp/yarn"
+    default: "./.yarn/cache"
 
 steps:
   - when:
@@ -28,7 +28,7 @@ steps:
       command: "yarn set version berry"
   - run:
       name: Yarn Install
-      command: "yarn install --frozen-lockfile --cache-folder <<parameters.cache_folder>>"
+      command: "yarn install --immutable"
   - when:
       condition: <<parameters.cache>>
       steps:
