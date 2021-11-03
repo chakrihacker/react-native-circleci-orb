@@ -24,8 +24,11 @@ steps:
             keys:
               - yarn-cache-{{ arch }}-{{ checksum "~/.tmp/checksumfiles/package.json" }}-{{ checksum "~/.tmp/checksumfiles/yarn.lock" }}-{{ .Environment.CACHE_VERSION }}
   - run:
+      name: Yarn set Berry
+      command: "yarn set version berry"
+  - run:
       name: Yarn Install
-      command: "yarn install --frozen-lockfile --non-interactive --cache-folder <<parameters.cache_folder>>"
+      command: "yarn install --frozen-lockfile --cache-folder <<parameters.cache_folder>>"
   - when:
       condition: <<parameters.cache>>
       steps:
