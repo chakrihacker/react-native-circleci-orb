@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-native-community/react-native-circleci-orb.git"
+    "url": "https://github.com/chakrihacker/react-native-circleci-orb.git"
   },
   "author": "Matt Oakes <hello@mattoakes.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/react-native-community/react-native-circleci-orb/issues"
+    "url": "https://github.com/chakrihacker/react-native-circleci-orb/issues"
   },
-  "homepage": "https://github.com/react-native-community/react-native-circleci-orb#readme"
+  "homepage": "https://github.com/chakrihacker/react-native-circleci-orb#readme"
 }
