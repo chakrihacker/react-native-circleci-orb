@@ -73,7 +73,7 @@ steps:
 
   - run:
       name: Build Android APK
-      command: "cd <<parameters.project_path>> && chmod +x gradlew && ./gradlew --build-cache --max-workers 2 --continue assemble<<parameters.build_type>>"
+      command: "cd <<parameters.project_path>> && chmod +x gradlew && ./gradlew --build-cache --max-workers 2 --continue assemble<<parameters.build_type>>  <<parameters.assemble_android_test>> -DtestBuildType=<<parameters.build_type>> --stacktrace"
 
   - when:
       condition: <<parameters.cache>>
