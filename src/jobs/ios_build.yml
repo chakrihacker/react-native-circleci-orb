@@ -27,7 +27,7 @@ parameters:
   yarn_cache_folder:
     description: The path to the yarn cache folder
     type: string
-    default: "/tmp/yarn"
+    default: "./.yarn/cache"
   # For the iOS build command
   project_type:
     description: If the iOS app is built using a project file (*.xcodeproj) or a workspace.
