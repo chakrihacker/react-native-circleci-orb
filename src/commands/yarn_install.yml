@@ -9,6 +9,10 @@ parameters:
     description: The path to the yarn cache folder.  Defaults to /tmp/yarn
     type: string
     default: "./.yarn/cache"
+  version:
+    description: Yarn version to set
+    type: string
+    default: 3.1.0
 
 steps:
   - when:
@@ -24,8 +28,8 @@ steps:
             keys:
               - yarn-cache-{{ arch }}-{{ checksum "~/.tmp/checksumfiles/package.json" }}-{{ checksum "~/.tmp/checksumfiles/yarn.lock" }}-{{ .Environment.CACHE_VERSION }}
   - run:
-      name: Yarn set Berry
-      command: "yarn set version berry "
+      name: Yarn set Version
+      command: yarn set version <<parameters.version>>
   - run:
       name: Yarn Install
       command: "yarn install --immutable"
