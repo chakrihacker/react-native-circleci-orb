@@ -24,8 +24,8 @@ steps:
             keys:
               - yarn-cache-{{ arch }}-{{ checksum "~/.tmp/checksumfiles/package.json" }}-{{ checksum "~/.tmp/checksumfiles/yarn.lock" }}-{{ .Environment.CACHE_VERSION }}
   - run:
-      name: Yarn set Berry
-      command: "yarn set version berry "
+      name: Yarn set version
+      command: "yarn set version 3.1.0"
   - run:
       name: Yarn Install
       command: "yarn install --immutable"
